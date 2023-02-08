@@ -31,6 +31,7 @@ export default {
           messageText: { type: types.string },
         }
       }));
+      // too imperative approach, also restrained to very few cases
       if (!validation.success) return res.status(400).json({ ...validation });
 
       const messagePayload = {
