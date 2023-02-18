@@ -4,9 +4,9 @@ export default {
       const validation = makeValidation(types => ({
         payload: req.body,
         checks: {
-          userIds: { 
-            type: types.array, 
-            options: { unique: true, empty: false, stringOnly: true } 
+          userIds: {
+            type: types.array,
+            options: { unique: true, empty: false, stringOnly: true }
           },
           type: { type: types.enum, options: { enum: CHAT_ROOM_TYPES } },
         }
@@ -22,7 +22,7 @@ export default {
       return res.status(500).json({ success: false, error: error })
     }
   },
-  postMessage: async (req, res) => { 
+  postMessage: async (req, res) => {
     try {
       const { roomId } = req.params;
       const validation = makeValidation(types => ({
@@ -44,7 +44,7 @@ export default {
       return res.status(500).json({ success: false, error: error })
     }
   },
-  getRecentConversation: async (req, res) => {  
+  getRecentConversation: async (req, res) => {
     try {
       const { roomId } = req.params;
       const room = await ChatRoomModel.getChatRoomByRoomId(roomId)

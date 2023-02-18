@@ -12,8 +12,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: () => uuidv4().replace(/\-/g, ""),
     },
-    firstName: String,
-    lastName: String,
+    username: String,
     email: { 
       type: String,
       required: true,
@@ -32,14 +31,13 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.statics.createUser = async function (
-      firstName, 
-      lastName,
+      username,
       email,
       password,
       type
 ) {
   try {
-    const user = await this.create({ firstName, lastName, email, password, type });
+    const user = await this.create({ username, email, password, type });
     return user;
   } catch (error) {
     throw error;

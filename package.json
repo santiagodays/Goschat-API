@@ -2,7 +2,7 @@
   "name": "goschat_api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/index.js",
@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@babel/register": "^7.18.9",
     "@withvoid/make-validation": "^1.0.5",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",

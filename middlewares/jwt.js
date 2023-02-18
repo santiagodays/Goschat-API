@@ -6,8 +6,8 @@ const SECRET_KEY = 'some-secret-key';
 
 export const encode = async (req, res, next) => {
   try {
-    const { userId } = req.params;
-    const user = await UserModel.getUserByEmail(req.params.email);
+    const { email } = req.body;
+    const user = await UserModel.getUserByEmail(email);
     const payload = {
       userId: user._id,
       userType: user.type,
